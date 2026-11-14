@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "md2ipynb"
+version = "0.1.0"
+description = "把课程 Markdown 转成 Jupyter Notebook：正文进 markdown 单元格，python 代码块进 code 单元格"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=7"]
+
+[project.scripts]
+md2ipynb = "md2ipynb.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
